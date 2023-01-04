@@ -136,7 +136,8 @@ spec:
               mountPath: /sostdata
           terminationMessagePolicy: File
           image: >-
-            image-registry.openshift-image-registry.svc:5000/sostrades/api@sha256:f3bfc3bb694fb639e7624cf2be8c13af89fbf24ad216b8bba8eabd69980e0844
+            api:latest
+            #image-registry.openshift-image-registry.svc:5000/sostrades/api@sha256:f3bfc3bb694fb639e7624cf2be8c13af89fbf24ad216b8bba8eabd69980e0844
       restartPolicy: Always
       terminationGracePeriodSeconds: 30
       dnsPolicy: ClusterFirst
