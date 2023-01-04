@@ -48,9 +48,8 @@ spec:
               mountPath: /etc/nginx/conf.d/
           terminationMessagePath: /dev/termination-log
           terminationMessagePolicy: File
-          imagePullPolicy: IfNotPresent
-          imagePullPolicy: Always          
-      restartPolicy: Always
+          imagePullPolicy: Never
+      restartPolicy: Never          
       terminationGracePeriodSeconds: 30
       dnsPolicy: ClusterFirst
       securityContext: {}
