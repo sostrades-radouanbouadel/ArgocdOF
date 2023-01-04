@@ -34,7 +34,7 @@ spec:
       containers:
         - name: frontend
           image: >-
-            frontend:1
+            docker.io/library/frontend:1
           resources:
             limits:
               cpu: 800m
