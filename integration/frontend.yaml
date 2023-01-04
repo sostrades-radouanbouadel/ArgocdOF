@@ -38,8 +38,8 @@ spec:
       containers:
         - name: frontend
           image: >-
-            frontend:latest
-            #image-registry.openshift-image-registry.svc:5000/sostrades/frontend@sha256:b677f2d0591598fb1abb8771808d2609e781d927e29a68c1370729462cad03c5
+            frontend
+#            #image-registry.openshift-image-registry.svc:5000/sostrades/frontend@sha256:b677f2d0591598fb1abb8771808d2609e781d927e29a68c1370729462cad03c5
           resources:
             limits:
               cpu: 800m
