@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: integration
+spec:
+  destination:
+    name: ''
+    namespace: sostrades
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: integration
+    repoURL: 'https://github.com/sostrades-radouanbouadel/ArgocdOF.git'
+    targetRevision: HEAD
+    directory:
+      recurse: true
+  project: default
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: false
+    syncOptions:
+      - CreateNamespace=true
+      - Replace=true
