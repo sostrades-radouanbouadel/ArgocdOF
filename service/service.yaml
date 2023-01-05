@@ -76,9 +76,6 @@ metadata:
   labels:
     app: frontend
 spec:
-  clusterIP: 172.30.78.64
-  ipFamilies:
-    - IPv4
   ports:
     - name: 8080-tcp
       protocol: TCP
