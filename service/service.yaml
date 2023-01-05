@@ -27,6 +27,9 @@ spec:
       targetPort: 8004
   internalTrafficPolicy: Cluster
   type: ClusterIP
+  selector:
+    app: api
+    deploymentconfig: api
   
 ---
   kind: Service
@@ -42,6 +45,9 @@ spec:
       targetPort: 3306
   internalTrafficPolicy: Cluster
   type: ClusterIP
+  selector:
+    app.kubernetes.io/instance: mysql-sostrades
+    app.kubernetes.io/name: mysql-sostrades  
 ---
 kind: Service
 apiVersion: v1
@@ -56,5 +62,32 @@ spec:
       targetPort: 5555
   internalTrafficPolicy: Cluster
   type: ClusterIP
+  selector:
+    app: ontology
+    deploymentconfig: ontology
   
-  
+---  
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: frontend
+  namespace: sostrades
+  labels:
+    app: frontend
+spec:
+  clusterIP: 172.30.78.64
+  ipFamilies:
+    - IPv4
+  ports:
+    - name: 8080-tcp
+      protocol: TCP
+      port: 8080
+      targetPort: 8080
+  internalTrafficPolicy: Cluster
+  type: ClusterIP
+  ipFamilyPolicy: SingleStack
+  sessionAffinity: None
+  selector:
+    app: frontend
+    deploymentconfig: frontend
