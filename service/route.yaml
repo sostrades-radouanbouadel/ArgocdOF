@@ -13,7 +13,7 @@ metadata:
     kubernetes.io/tls-acme: 'true'
 
 spec:
-  host: localhost
+  host: 127.0.0.1:8089
   to:
     kind: Service
     name: frontend
