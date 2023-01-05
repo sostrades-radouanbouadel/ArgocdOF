@@ -88,13 +88,13 @@ spec:
               command:
                 - /bin/bash
                 - '-ec'
-                - |
+#                - |
 #                  password_aux="${MYSQL_ROOT_PASSWORD:-}"
 #                  if [[ -f "${MYSQL_ROOT_PASSWORD_FILE:-}" ]]; then
 #                      password_aux=$(cat "$MYSQL_ROOT_PASSWORD_FILE")
 #                  fi
 #                  mysqladmin status -uroot -p"${password_aux}"
-                  mysqladmin status -uroot 
+                  - mysqladmin status -uroot 
             timeoutSeconds: 1
             periodSeconds: 10
             successThreshold: 1
