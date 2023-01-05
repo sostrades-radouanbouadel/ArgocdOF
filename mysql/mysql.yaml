@@ -46,6 +46,14 @@ spec:
               value: admin
             - name: MYSQL_DATABASE
               value: my_database
+             
+
+            - name: MYSQL_ROOT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-sostrades-password2
+                  key: mysql-root-password
+                
           securityContext: {}
           ports:
             - name: mysql
