@@ -122,7 +122,7 @@ spec:
             - name: https
               containerPort: 8003
               protocol: TCP
-          imagePullPolicy: Always
+          imagePullPolicy: Never
           volumeMounts:
             - name: sostrades-api-scripts
               mountPath: /startup/
