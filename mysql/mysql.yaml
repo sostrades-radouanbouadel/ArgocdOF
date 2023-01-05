@@ -73,7 +73,11 @@ spec:
             failureThreshold: 3
           env:
             - name: MYSQL_ROOT_PASSWORD
-              value: admin
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-sostrades-password
+                  key: mysql-root-password2
+##              value: admin
 ##change to value from secret              
             - name: MYSQL_DATABASE
               value: my_database
@@ -94,7 +98,7 @@ spec:
 #                      password_aux=$(cat "$MYSQL_ROOT_PASSWORD_FILE")
 #                  fi
 #                  mysqladmin status -uroot -p"${password_aux}"
-                - mysqladmin status 
+                - mysqladmin status -uroot -padmin
             timeoutSeconds: 1
             periodSeconds: 10
             successThreshold: 1
