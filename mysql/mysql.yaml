@@ -76,7 +76,7 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: mysql-sostrades-password
-                  key: mysql-root-password2
+                  key: mysql-root-password
 ##              value: admin
 ##change to value from secret              
             - name: MYSQL_DATABASE
