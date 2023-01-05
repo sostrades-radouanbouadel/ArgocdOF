@@ -39,38 +39,38 @@ spec:
             requests:
               cpu: 250m
               memory: 64Mi
-          readinessProbe:
-            exec:
-              command:
-                - /bin/bash
-                - '-ec'
-                - |
-                  password_aux="${MYSQL_ROOT_PASSWORD:-}"
-                  if [[ -f "${MYSQL_ROOT_PASSWORD_FILE:-}" ]]; then
-                      password_aux=$(cat "$MYSQL_ROOT_PASSWORD_FILE")
-                  fi
-                  mysqladmin status -uroot -p"${password_aux}"
-            timeoutSeconds: 1
-            periodSeconds: 10
-            successThreshold: 1
-            failureThreshold: 3
+#          readinessProbe:
+#            exec:
+#              command:
+#                - /bin/bash
+#                - '-ec'
+#                - |
+#                  password_aux="${MYSQL_ROOT_PASSWORD:-}"
+#                  if [[ -f "${MYSQL_ROOT_PASSWORD_FILE:-}" ]]; then
+#                      password_aux=$(cat "$MYSQL_ROOT_PASSWORD_FILE")
+#                  fi
+#                  mysqladmin status -uroot -p"${password_aux}"
+#            timeoutSeconds: 1
+#            periodSeconds: 10
+#            successThreshold: 1
+#            failureThreshold: 3
           terminationMessagePath: /dev/termination-log
           name: mysql
-          livenessProbe:
-            exec:
-              command:
-                - /bin/bash
-                - '-ec'
-                - |
-                  password_aux="${MYSQL_ROOT_PASSWORD:-}"
-                  if [[ -f "${MYSQL_ROOT_PASSWORD_FILE:-}" ]]; then
-                      password_aux=$(cat "$MYSQL_ROOT_PASSWORD_FILE")
-                  fi
-                  mysqladmin status -uroot -p"${password_aux}"
-            timeoutSeconds: 1
-            periodSeconds: 10
-            successThreshold: 1
-            failureThreshold: 3
+#          livenessProbe:
+#            exec:
+#              command:
+#                - /bin/bash
+#                - '-ec'
+#                - |
+#                  password_aux="${MYSQL_ROOT_PASSWORD:-}"
+#                  if [[ -f "${MYSQL_ROOT_PASSWORD_FILE:-}" ]]; then
+#                      password_aux=$(cat "$MYSQL_ROOT_PASSWORD_FILE")
+#                  fi
+#                  mysqladmin status -uroot -p"${password_aux}"
+#            timeoutSeconds: 1
+#            periodSeconds: 10
+#            successThreshold: 1
+#            failureThreshold: 3
           env:
             - name: MYSQL_ROOT_PASSWORD
               valueFrom:
@@ -87,22 +87,22 @@ spec:
               containerPort: 3306
               protocol: TCP
           imagePullPolicy: IfNotPresent
-          startupProbe:
-            exec:
-              command:
-                - /bin/bash
-                - '-ec'
+#          startupProbe:
+#            exec:
+#              command:
+#                - /bin/bash
+#                - '-ec'
 #                - |
 #                  password_aux="${MYSQL_ROOT_PASSWORD:-}"
 #                  if [[ -f "${MYSQL_ROOT_PASSWORD_FILE:-}" ]]; then
 #                      password_aux=$(cat "$MYSQL_ROOT_PASSWORD_FILE")
 #                  fi
 #                  mysqladmin status -uroot -p"${password_aux}"
-                - mysqladmin status -uroot -padmin
-            timeoutSeconds: 1
-            periodSeconds: 10
-            successThreshold: 1
-            failureThreshold: 3
+#                - mysqladmin status -uroot -padmin
+#            timeoutSeconds: 1
+#            periodSeconds: 10
+#            successThreshold: 1
+#            failureThreshold: 3
           volumeMounts:
             - name: data
               mountPath: /var/lib/mysql
