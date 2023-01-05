@@ -1,10 +1,10 @@
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  annotations:
-    image.openshift.io/triggers: >-
-      [{"from":{"kind":"ImageStreamTag","name":"api:latest","namespace":"sostrades"},"fieldPath":"spec.template.spec.containers[?(@.name==\"api\")].image","pause":"false"}]
-    openshift.io/generated-by: OpenShiftWebConsole
+##  annotations:
+##    image.openshift.io/triggers: >-
+##      [{"from":{"kind":"ImageStreamTag","name":"api:latest","namespace":"sostrades"},"fieldPath":"spec.template.spec.containers[?(@.name==\"api\")].image","pause":"false"}]
+##    openshift.io/generated-by: OpenShiftWebConsole
   name: api
   namespace: sostrades
   labels:
