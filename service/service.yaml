@@ -28,7 +28,7 @@ spec:
   internalTrafficPolicy: Cluster
   type: ClusterIP
   
-  ---
+---
   kind: Service
 apiVersion: v1
 metadata:
@@ -42,7 +42,7 @@ spec:
       targetPort: 3306
   internalTrafficPolicy: Cluster
   type: ClusterIP
-  ---
+---
 kind: Service
 apiVersion: v1
 metadata:
