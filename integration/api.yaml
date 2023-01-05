@@ -57,13 +57,13 @@ spec:
           persistentVolumeClaim:
             claimName: sostrades-api-data-pvc
       containers:
-#        - resources:
-#            limits:
-#              cpu: '10'
-#              memory: 2Gi
-#            requests:
-#              cpu: '1'
-#              memory: 1Gi
+        - resources:
+            limits:
+              cpu: '1'
+              memory: 2Gi
+            requests:
+              cpu: '1'
+              memory: 1Gi
           terminationMessagePath: /dev/termination-log
           name: api
           env:
