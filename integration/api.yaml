@@ -60,7 +60,7 @@ spec:
         - resources:
             limits:
               cpu: '10'
-              memory: 13Gi
+              memory: 2Gi
             requests:
               cpu: '1'
               memory: 1Gi
