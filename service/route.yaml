@@ -13,7 +13,7 @@ metadata:
     kubernetes.io/tls-acme: 'true'
 
 spec:
-  host: frontend-sostrades.apps.odh-cl2.apps.os-climate.org
+  host: localhost
   to:
     kind: Service
     name: frontend
