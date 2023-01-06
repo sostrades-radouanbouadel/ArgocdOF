@@ -1,10 +1,10 @@
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  annotations:
-    image.openshift.io/triggers: >-
-      [{"from":{"kind":"ImageStreamTag","name":"ontology:latest","namespace":"sostrades"},"fieldPath":"spec.template.spec.containers[?(@.name==\"ontology\")].image","pause":"false"}]
-    openshift.io/generated-by: OpenShiftWebConsole
+#  annotations:
+#    image.openshift.io/triggers: >-
+#      [{"from":{"kind":"ImageStreamTag","name":"ontology:latest","namespace":"sostrades"},"fieldPath":"spec.template.spec.containers[?(@.name==\"ontology\")].image","pause":"false"}]
+#    openshift.io/generated-by: OpenShiftWebConsole
   name: ontology
   namespace: sostrades
   labels:
@@ -28,7 +28,8 @@ spec:
       containers:
         - name: ontology
           image: >-
-            image-registry.openshift-image-registry.svc:5000/sostrades/ontology@sha256:867dbb1a8b9e0feda302d021410859f45c7064d34b1361a2b4628b96179ad09d
+            docker.io/library/ontology:latest
+#            image-registry.openshift-image-registry.svc:5000/sostrades/ontology@sha256:867dbb1a8b9e0feda302d021410859f45c7064d34b1361a2b4628b96179ad09d
           resources:
             limits:
               cpu: 1200m
