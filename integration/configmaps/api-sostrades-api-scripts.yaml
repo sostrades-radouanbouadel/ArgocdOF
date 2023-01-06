@@ -41,10 +41,9 @@ data:
 
     flask init_process
 
-
-    flask create_standard_user dyla dyla@test.com dyla dyla
-
-    flask change_user_profile dyla -p "Study manager"
+    flask create_standard_user testuser user@test.com test user
+    
+    flask change_user_profile testuser -p "Study manager"
 
 
     gunicorn sos_trades_api.server.split_mode.post_processing_server:app --bind
