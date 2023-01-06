@@ -35,7 +35,7 @@ spec:
     server: 'https://kubernetes.default.svc'
   source:
     path: service
-    repoURL: 'https://github.com/sostrades-radouanbouadel/ArgocdOF.git'
+    repoURL: 'https://github.com/sostrades-radouanbouadel/argocdof.git'
     targetRevision: HEAD
     directory:
       recurse: true
