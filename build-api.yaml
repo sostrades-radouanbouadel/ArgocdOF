@@ -1,0 +1,29 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  name: api
+  labels:
+    app: api
+spec:
+  source:
+    type: Git
+    git:
+      uri: https://github.com/sostrades-radouanbouadel/ArgocdOF.git
+    contextDir: frontend
+  strategy:
+    type: Docker                      
+    dockerStrategy:
+      dockerfilePath: Dockerfile    # Look for Dockerfile in: gitUri/contextDir/dockerfilePath
+  output:
+    to:
+      kind: ImageStreamTag
+      name: api:latest
+---
+
+apiVersion: v1
+kind: ImageStream
+metadata:
+  labels:
+    application: api
+  name: api
+  namespace: sostrades
