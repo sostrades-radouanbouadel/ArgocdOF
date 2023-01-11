@@ -34,7 +34,8 @@ spec:
       containers:
         - name: frontend
           image: >-
-            docker.io/library/frontend:1
+            registry/sostrades/frontend:latest
+#            docker.io/library/frontend:1
           resources:
             limits:
               cpu: 800m
