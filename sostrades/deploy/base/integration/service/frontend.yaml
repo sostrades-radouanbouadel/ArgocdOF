@@ -1,0 +1,20 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: frontend
+  namespace: sostrades
+  labels:
+    app: frontend
+spec:
+  ports:
+    - name: 8080-tcp
+      protocol: TCP
+      port: 8089
+      targetPort: 8080
+  internalTrafficPolicy: Cluster
+  type: ClusterIP
+  ipFamilyPolicy: SingleStack
+  sessionAffinity: None
+  selector:
+    app: frontend
+    deploymentconfig: frontend

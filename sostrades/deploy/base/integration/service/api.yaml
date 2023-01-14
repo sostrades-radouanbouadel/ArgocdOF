@@ -1,0 +1,32 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: api
+  namespace: sostrades
+spec:
+  ports:
+    - name: api
+      protocol: TCP
+      port: 8000
+      targetPort: 8000
+    - name: api-data
+      protocol: TCP
+      port: 8001
+      targetPort: 8001
+    - name: api-message
+      protocol: TCP
+      port: 8002
+      targetPort: 8002
+    - name: https
+      protocol: TCP
+      port: 8003
+      targetPort: 8003
+    - name: api-v0
+      protocol: TCP
+      port: 8004
+      targetPort: 8004
+  internalTrafficPolicy: Cluster
+  type: ClusterIP
+  selector:
+    app: api
+    deploymentconfig: api

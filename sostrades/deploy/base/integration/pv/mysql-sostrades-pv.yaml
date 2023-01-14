@@ -1,0 +1,15 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: mysql-sostrades-pv
+spec:
+  capacity:
+    storage: 3Gi
+  hostPath:
+    path: /mnt/data
+    type: ''
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: slow
+  volumeMode: Filesystem
