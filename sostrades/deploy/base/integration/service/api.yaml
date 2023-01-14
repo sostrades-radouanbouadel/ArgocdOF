@@ -25,7 +25,7 @@ spec:
       protocol: TCP
       port: 8004
       targetPort: 8004
-  internalTrafficPolicy: Cluster
+#  internalTrafficPolicy: Cluster
   type: ClusterIP
   selector:
     app: api
