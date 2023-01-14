@@ -11,7 +11,6 @@ spec:
       protocol: TCP
       port: 8089
       targetPort: 8080
-  internalTrafficPolicy: Cluster
   type: ClusterIP
   ipFamilyPolicy: SingleStack
   sessionAffinity: None
