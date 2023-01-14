@@ -49,7 +49,7 @@ spec:
               mountPath: /etc/nginx/conf.d/
           terminationMessagePath: /dev/termination-log
           terminationMessagePolicy: File
-          imagePullPolicy: Never
+          imagePullPolicy: IfNotPresent
       restartPolicy: Always          
       terminationGracePeriodSeconds: 30
       dnsPolicy: ClusterFirst
