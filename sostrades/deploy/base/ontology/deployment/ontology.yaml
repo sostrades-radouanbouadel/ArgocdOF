@@ -28,7 +28,8 @@ spec:
       containers:
         - name: ontology
           image: >-
-            docker.io/library/ontology:latest
+            172.30.1.1:5000/sostrades/ontology
+#            docker.io/library/ontology:latest
 #            image-registry.openshift-image-registry.svc:5000/sostrades/ontology@sha256:867dbb1a8b9e0feda302d021410859f45c7064d34b1361a2b4628b96179ad09d
           resources:
             limits:
