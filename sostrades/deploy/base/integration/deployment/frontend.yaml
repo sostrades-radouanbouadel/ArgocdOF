@@ -34,7 +34,8 @@ spec:
       containers:
         - name: frontend
           image: >-
-            registry/sostrades/frontend:latest
+            172.30.1.1:5000/sostrades/frontend
+#            registry/sostrades/frontend:latest
 #            docker.io/library/frontend:1
           resources:
             limits:
