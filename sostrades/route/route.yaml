@@ -1,22 +1,19 @@
-kind: Route
+   kind: Route
 apiVersion: route.openshift.io/v1
 metadata:
   name: frontend
   namespace: sostrades
   labels:
-#    app: frontend
-#    app.kubernetes.io/component: frontend
-#    app.kubernetes.io/instance: frontend
-#    app.kubernetes.io/name: frontend
-#    app.kubernetes.io/part-of: sostrades
-#  annotations:
-#    kubernetes.io/tls-acme: 'true'
-#    openshift.io/host.generated: 'true'
+
+  annotations:
+    kubernetes.io/tls-acme: 'true'
+    openshift.io/host.generated: 'true'
 spec:
-  host: 127.0.0.1:8089
   to:
     kind: Service
     name: frontend
     weight: 100
   port:
     targetPort: 8080-tcp
+  tls:
+    termination: edge
