@@ -1,0 +1,16 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: ontology
+  namespace: sostrades
+spec:
+  ports:
+    - name: api
+      protocol: TCP
+      port: 5555
+      targetPort: 5555
+  internalTrafficPolicy: Cluster
+  type: ClusterIP
+  selector:
+    app: ontology
+    deploymentconfig: ontology
